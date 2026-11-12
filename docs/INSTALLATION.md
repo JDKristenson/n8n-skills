@@ -1,6 +1,34 @@
 # Installation Guide
 
-Complete installation instructions for n8n-skills across all platforms.
+Historical installation examples for the October 2025 n8n-skills snapshot.
+
+## Setup status and boundaries
+
+**NOT RUN / compatibility unverified.** This repository ships Markdown skills,
+plugin metadata and evaluation scenarios, not a native application. It has no
+package manifest, dependency lockfile, build command or automated evaluation
+runner. The npm commands below concern the **external n8n-mcp server**, not a
+repository build. No install, build, host session, MCP call or n8n API call was
+performed during the documentation cleanup.
+
+The instructions below are retained upstream examples, not confirmed current
+platform support. Check current [Claude documentation](https://docs.anthropic.com/),
+[n8n-mcp documentation](https://github.com/czlonkowski/n8n-mcp) and
+[n8n documentation](https://docs.n8n.io/) for your versions before execution.
+The clone/plugin examples select upstream, not necessarily this snapshot; pin
+and review the desired revision before use. Automatic activation, upload UI,
+plan requirements and custom-directory support are host/version dependent.
+
+Inferred integration: a compatible host loads the seven skill directories and
+separately connects to n8n-mcp. Discovery/validation/template capabilities may be
+available without n8n credentials; instance workflow management requires a
+separately configured n8n instance and permission. See the
+[conceptual diagram](skill-context.svg) ([editable source](skill-context.excalidraw)).
+
+Use placeholders only in shared configuration. Keep real credentials and workflow
+or customer data outside tracked docs, use least-privilege sandbox access, and
+avoid write-capable workflow examples against production. `.gitignore` excluding
+`.mcp.json` does not establish secret absence or authorize publishing it.
 
 ---
 
@@ -39,7 +67,7 @@ npm install -g n8n-mcp
 ### 2. Claude Access
 
 You need one of:
-- **Claude Code** (desktop application)
+- **Claude Code** (compatible host version; interface not verified here)
 - **Claude.ai** (web interface)
 - **Claude API** (via SDK)
 
@@ -95,7 +123,14 @@ zip -r n8n-mcp-tools-expert.zip n8n-mcp-tools-expert/
 zip -r n8n-workflow-patterns.zip n8n-workflow-patterns/
 zip -r n8n-validation-expert.zip n8n-validation-expert/
 zip -r n8n-node-configuration.zip n8n-node-configuration/
+zip -r n8n-code-javascript.zip n8n-code-javascript/
+zip -r n8n-code-python.zip n8n-code-python/
 ```
+
+These historical repackaging examples do not include a license automatically.
+Ensure the root MIT copyright and permission notice accompanies each substantial
+copy, and retain skill credits and any applicable nested notices. The tracked
+`dist/` directory contains only five individual ZIPs; the bundle has all seven.
 
 **Step 3**: Upload to Claude.ai
 
@@ -112,11 +147,17 @@ In a new conversation, type:
 "List my active skills"
 ```
 
-You should see all 5 n8n skills listed.
+If supported and all seven were installed, verify the seven source skills are available; this prompt is not proof of activation.
 
 ---
 
 ### Method 3: Claude API / SDK
+
+**Historical illustrative code, not a verified SDK integration.** The loader
+below is repository example code. In particular, `skills: skills` on
+`client.messages.create` is not established as a supported SDK request parameter
+by this repository. Do not treat it as copy-and-run setup; consult current host/API
+documentation and implement its supported loading mechanism separately.
 
 **Step 1**: Install via package manager
 
@@ -196,7 +237,7 @@ Webhook data is under $json.body...
 Ask Claude: "Build and validate a webhook to Slack workflow"
 ```
 
-Expected: All 5 skills should activate and work together.
+Historical expectation: relevant skills compose. Do not assume all seven activate for every query. This write-capable scenario needs an authorized sandbox.
 
 ---
 
@@ -244,13 +285,10 @@ Expected: All 5 skills should activate and work together.
 
 **Problem**: Cannot write to skills directory
 
-**macOS/Linux**:
-```bash
-sudo chown -R $USER ~/.claude
-chmod -R 755 ~/.claude/skills
-```
-
-**Windows**: Run PowerShell as Administrator
+Inspect the specific destination and its ownership first. Use a user-owned
+skills directory supported by the host; do not apply recursive ownership or
+permission changes to the entire host configuration, or elevate privileges just
+to follow these historical examples.
 
 ---
 
@@ -321,7 +359,7 @@ cp -r skills/n8n-mcp-tools-expert ~/.claude/skills/
 
 ## Next Steps
 
-✅ Installation complete? Continue to [USAGE.md](USAGE.md) for usage examples.
+For historical usage examples, see [USAGE.md](USAGE.md). Installation and runtime behavior remain unverified by this cleanup.
 
 ---
 
