@@ -1,6 +1,31 @@
 # n8n-skills
 
-**Expert Claude Code skills for building flawless n8n workflows using the n8n-mcp MCP server**
+**A credited snapshot of Claude skills for n8n-mcp workflow guidance**
+
+## Source and scope
+
+This repository preserves the upstream [czlonkowski/n8n-skills snapshot at
+`ec350daa6e148733ddb7d0c74b25c8dc69879b12`](https://github.com/czlonkowski/n8n-skills/tree/ec350daa6e148733ddb7d0c74b25c8dc69879b12)
+(latest commit dated October 21, 2025). Before this documentation cleanup,
+`JDKristenson/n8n-skills` had that exact same default-branch commit: no tree delta
+relative to **that upstream revision**, not a comparison with upstream today.
+Repository namespace does not establish authorship or a GitHub fork relationship.
+The local changes described here clarify documentation and add an editable diagram;
+they do not implement new skills or claim original authorship of the collection.
+This documentation cleanup is AI-assisted (Reason), separate from the historical
+Claude disclosures for the upstream work.
+
+The bounded history reachable from that snapshot has 21 commits dated October
+20–21, 2025, attributed to `czlonkowski` / Romuald Członkowski; 13 commit messages
+include Claude co-authorship disclosures. Those records do not resolve every
+person's contribution or independently establish how the content was produced.
+Preserve upstream, human, community and disclosed AI credits when reusing it.
+
+This is a Markdown skills/reference collection, **not a standalone n8n application**.
+Installation and runtime compatibility have **not been run or verified** during
+this cleanup. Numerical claims, success rates, platform instructions and runtime
+examples below are inherited October 2025 guidance, not current measurements or
+guarantees; consult current host, n8n and n8n-mcp documentation before use.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![n8n-mcp](https://img.shields.io/badge/n8n--mcp-compatible-green.svg)](https://github.com/czlonkowski/n8n-mcp)
@@ -9,7 +34,7 @@
 
 ## 🎯 What is this?
 
-This repository contains 5 complementary **Claude Code skills** that teach AI assistants how to build production-ready n8n workflows using the [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) MCP server.
+This repository contains 7 complementary **Claude Code skills** that teach AI assistants how to build production-ready n8n workflows using the [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) MCP server.
 
 ### Why These Skills Exist
 
@@ -122,6 +147,11 @@ Write Python code in n8n Code nodes with proper limitations awareness.
 
 ### Prerequisites
 
+**Historical setup examples — NOT RUN.** Plugin commands below target upstream,
+not this credited snapshot. They may install a different revision. Host interfaces,
+SDKs and n8n behavior can change; these are not verified current instructions.
+See the [setup status and boundaries](docs/INSTALLATION.md#setup-status-and-boundaries).
+
 1. **n8n-mcp MCP server** installed and configured ([Installation Guide](https://github.com/czlonkowski/n8n-mcp))
 2. **Claude Code**, Claude.ai, or Claude API access
 3. `.mcp.json` configured with n8n-mcp server
@@ -215,22 +245,28 @@ All skills compose seamlessly!
 - [Installation Guide](docs/INSTALLATION.md) - Detailed installation for all platforms
 - [Usage Guide](docs/USAGE.md) - How to use skills effectively
 - [Development Guide](docs/DEVELOPMENT.md) - Contributing and testing
-- [MCP Testing Log](docs/MCP_TESTING_LOG.md) - Real tool responses used in skills
+- [MCP Testing Log](docs/MCP_TESTING_LOG.md) - Historical observations dated October 20, 2025
+- [Integration diagram](docs/skill-context.svg) - Conceptual boundaries, not a running app
+- [Editable Excalidraw source](docs/skill-context.excalidraw) - Open/import in Excalidraw; preview uses the same shapes and labels
+
+![Skills integration context](docs/skill-context.svg)
 
 ---
 
 
 ## 🧪 Testing
 
-Each skill includes 3+ evaluations for quality assurance:
+The source contains **32 JSON evaluation scenarios** across seven skill groups.
+These specify expected behavior; they are not recorded passing test results.
+There is no application package manifest, lockfile, automated evaluation runner or
+native build command in this snapshot. Do not infer an `npm test` or build setup.
+The [development guide](docs/DEVELOPMENT.md) describes evaluation-driven work and
+an automated framework as future work.
 
-```bash
-# Run evaluations (if testing framework available)
-npm test
-
-# Or manually test with Claude
-claude-code --skill n8n-expression-syntax "Test webhook data access"
-```
+For future manual evaluation, use a separately configured compatible host, run a
+scenario with and without the relevant skill, and record host/model/n8n-mcp/n8n
+versions and observed versus expected behavior. Workflow-writing scenarios need a
+sandbox and explicit permission. **No host, MCP, n8n API or scenario was run here.**
 
 ---
 
@@ -250,7 +286,12 @@ Contributions welcome! Please see [DEVELOPMENT.md](docs/DEVELOPMENT.md) for guid
 
 ## 📝 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+The root [MIT license](LICENSE) names Copyright (c) 2025 Romuald Członkowski.
+Retain its copyright and permission notice in copies or substantial portions.
+Preserve applicable nested/community notices too; this declaration does not
+relicense external n8n, n8n-mcp, host software or independently sourced templates.
+See the [distribution notice status](dist/README.md#notice-status) before reusing
+individual ZIPs. Archives were inspected, not rebuilt by this cleanup.
 
 ---
 

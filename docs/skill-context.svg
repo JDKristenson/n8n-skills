@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" role="img" aria-labelledby="title desc">
+<title id="title">n8n-skills conceptual integration</title>
+<desc id="desc">Seven Markdown skills guide a compatible external host. The host calls n8n-mcp, which can optionally manage an authorized n8n instance. This is not a runnable app.</desc>
+<rect width="980" height="640" fill="white"/>
+<g fill="none" stroke="#1e293b" stroke-width="2">
+<rect x="40" y="120" width="350" height="110"/>
+<rect x="40" y="330" width="350" height="110"/>
+<rect x="570" y="330" width="350" height="110"/>
+<rect x="570" y="120" width="350" height="110"/>
+<path d="M215 230 L215 330"/>
+<path d="M209 320 L215 330 L221 320"/>
+<path d="M390 385 L570 385"/>
+<path d="M560 379 L570 385 L560 391"/>
+<path d="M745 330 L745 230"/>
+<path d="M739 240 L745 230 L751 240"/>
+</g>
+<g fill="#1e293b" font-family="Arial, sans-serif">
+<text x="40" y="50.0" font-size="28">n8n-skills | conceptual integration</text>
+<text x="40" y="82.0" font-size="17">October 2025 snapshot • not an application or runtime verification</text>
+<text x="58" y="159.0" font-size="22">Repository: seven skill folders</text>
+<text x="58" y="190.0" font-size="17">Markdown guidance and references</text>
+<text x="58" y="211.25" font-size="17">Not an executable MCP server</text>
+<text x="58" y="369.0" font-size="22">External: compatible host</text>
+<text x="58" y="400.0" font-size="17">Loads relevant skill guidance</text>
+<text x="58" y="421.25" font-size="17">Host/version behavior unverified</text>
+<text x="588" y="369.0" font-size="22">External: n8n-mcp</text>
+<text x="588" y="400.0" font-size="17">Discovery • validation • templates</text>
+<text x="588" y="421.25" font-size="17">Tool/version behavior unverified</text>
+<text x="588" y="159.0" font-size="22">External: n8n instance / API</text>
+<text x="588" y="190.0" font-size="17">Optional authorized management</text>
+<text x="588" y="211.25" font-size="17">Separate access and credentials</text>
+<text x="240" y="282.0" font-size="17">guidance</text>
+<text x="410" y="367.0" font-size="17">tool calls</text>
+<text x="590" y="282.0" font-size="17">optional API calls</text>
+<text x="40" y="508.0" font-size="18">Boundary: workflow-management tools can write; use an authorized sandbox.</text>
+<text x="40" y="541.0" font-size="17">No endpoints, credentials or customer data. No install, build, host or API run here.</text>
+<text x="40" y="584.0" font-size="17">Upstream: czlonkowski/n8n-skills • Conceived by Romuald Członkowski</text>
+<text x="40" y="612.0" font-size="17">Human and disclosed AI credits retained in README and Git history.</text>
+</g>
+</svg>

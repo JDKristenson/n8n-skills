@@ -1,6 +1,15 @@
 # n8n-mcp Skills - Distribution Packages
 
-This folder contains distribution packages for different Claude platforms.
+This folder contains historical v1.0.0 distribution packages for different Claude platforms.
+
+**Snapshot status:** source and the complete bundle contain seven skills; only
+five prebuilt individual ZIPs are tracked. JavaScript/Python source folders can be
+packaged separately, but no individual archives for them are supplied here.
+Commands, platform UI and plan requirements below are inherited October 2025
+examples, **NOT RUN** or verified against current hosts. Plugin commands target
+upstream and may not install these archived bytes. The archives have not been
+rebuilt by this documentation cleanup; their embedded docs remain historical.
+See [setup boundaries](../docs/INSTALLATION.md#setup-status-and-boundaries).
 
 ## 📦 Available Packages
 
@@ -42,7 +51,7 @@ Upload each skill separately via Settings → Capabilities → Skills (bottom of
 3. Select one of the skill zip files above
 4. Repeat for each skill you want to install
 
-**Note:** JavaScript and Python Code skills are only available in the complete bundle (not as individual skills).
+**Note:** Prebuilt individual ZIPs for JavaScript and Python are absent; both skills exist in source and in the complete bundle.
 
 ## 🎯 Which Package Should I Use?
 
@@ -52,7 +61,7 @@ Upload each skill separately via Settings → Capabilities → Skills (bottom of
 | **Claude Code** | Complete bundle (n8n-mcp-skills-v1.0.0.zip) | All 7 skills at once |
 | **Claude API** | Complete bundle | All 7 skills (extract skills/ folder) |
 
-**Note:** Code skills (#6 JavaScript, #7 Python) are only in the complete bundle.
+**Note:** Among the tracked ZIPs, Code skills (#6 JavaScript, #7 Python) are only in the complete bundle; their source is also under `skills/`.
 
 ---
 
@@ -152,7 +161,19 @@ For detailed installation instructions, see:
 
 ## 📝 License
 
-MIT License - see `../LICENSE` file
+MIT License - see [LICENSE](../LICENSE).
+
+### Notice status
+
+Read-only inspection of the six tracked ZIPs found the full root MIT license in
+the complete bundle, but no LICENSE/NOTICE/COPYING-named file in the five
+individual ZIPs. This is a packaging observation, not a claim of comprehensive
+third-party clearance. The root license names Copyright (c) 2025 Romuald
+Członkowski; ensure its copyright and permission notice accompanies copies or
+substantial portions, including standalone skill redistribution. Preserve
+upstream/human/community credits and applicable nested notices; external tools
+and independently sourced templates are not relicensed by this README. Existing
+ZIP bytes are unchanged.
 
 ## 🙏 Credits
 

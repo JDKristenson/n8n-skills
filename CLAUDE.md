@@ -8,7 +8,13 @@ This is the **n8n-skills** repository - a collection of Claude Code skills desig
 
 **Repository**: https://github.com/czlonkowski/n8n-skills
 
-**Purpose**: Create 5 complementary meta-skills that provide expert guidance on using n8n-mcp MCP tools effectively for building n8n workflows.
+**Snapshot status**: This is inherited upstream guidance from October 2025.
+Counts and telemetry below are historical, not current performance evidence.
+There are seven implemented source skills, 32 JSON evaluation scenarios and no
+native application build or automated evaluation runner. See README.md for
+provenance and docs/INSTALLATION.md for unverified setup boundaries.
+
+**Purpose**: Maintain 7 complementary meta-skills that provide expert guidance on using n8n-mcp MCP tools effectively for building n8n workflows.
 
 **Architecture**:
 - **n8n-mcp MCP Server**: Provides data access (525 nodes, validation, templates)
@@ -21,19 +27,23 @@ This is the **n8n-skills** repository - a collection of Claude Code skills desig
 n8n-skills/
 ├── README.md              # Project overview
 ├── LICENSE               # MIT License
-├── skills/               # (To be created) Individual skill implementations
+├── skills/               # Seven implemented skill directories
 │   ├── n8n-expression-syntax/
 │   ├── n8n-mcp-tools-expert/
 │   ├── n8n-workflow-patterns/
 │   ├── n8n-validation-expert/
-│   └── n8n-node-configuration/
-├── evaluations/          # (To be created) Test scenarios for each skill
-├── docs/                 # Documentation
-│   └── SKILLS_IMPLEMENTATION_GUIDE.md  # Complete implementation guide
-└── .gitignore           # Git ignore (excludes docs/)
+│   ├── n8n-node-configuration/
+│   ├── n8n-code-javascript/
+│   └── n8n-code-python/
+├── evaluations/          # JSON scenarios, not a test runner
+├── dist/                 # Historical bundle and five individual ZIPs
+├── docs/                 # INSTALLATION, USAGE, DEVELOPMENT, MCP_TESTING_LOG
+│   ├── skill-context.excalidraw  # Editable conceptual diagram
+│   └── skill-context.svg         # Matching preview
+└── .gitignore            # Excludes local .mcp.json
 ```
 
-## Implementation Timeline
+## Historical Implementation Timeline
 
 - **Week 1**: n8n Expression Syntax (PoC - 4 files, ~350 lines)
 - **Week 2**: n8n MCP Tools Expert + n8n Workflow Patterns
@@ -41,7 +51,11 @@ n8n-skills/
 - **Week 4**: Testing, refinement, documentation
 - **Week 5-6**: Distribution, plugin packaging
 
-## Five Skills to Implement
+## Original Five Skills (Implemented)
+
+JavaScript and Python Code skills were subsequently added under
+`skills/n8n-code-javascript/` and `skills/n8n-code-python/`, bringing the source
+collection to seven. The original prioritization below is historical.
 
 ### 1. n8n Expression Syntax
 **Priority**: Foundation (Week 1)
@@ -151,7 +165,7 @@ Avg 56 seconds between edits
 
 ### When Adding New Skills
 1. Create skill directory under `skills/`
-2. Follow the structure in `docs/SKILLS_IMPLEMENTATION_GUIDE.md`
+2. Follow `docs/DEVELOPMENT.md` and existing skill directories (the old implementation guide was deleted in the upstream snapshot)
 3. Write SKILL.md with frontmatter
 4. Add reference files as needed
 5. Create 3+ evaluations in `evaluations/`
@@ -188,7 +202,7 @@ Format:
 
 ## Distribution
 
-Final distribution will be:
+The snapshot contains these distribution forms (host compatibility is unverified):
 1. **GitHub Repository**: Full source code and documentation
 2. **Claude Code Plugin**: Packaged skills with plugin.json
 3. **Individual Skill Uploads**: For Claude.ai users
